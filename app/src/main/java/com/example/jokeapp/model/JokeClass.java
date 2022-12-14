@@ -2,7 +2,7 @@ package com.example.jokeapp.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Joke {
+public class JokeClass {
     @SerializedName("error")
     public String error;
     @SerializedName("category")
@@ -24,7 +24,7 @@ public class Joke {
     @SerializedName("joke")
     public String joke;
 
-    public Joke(String category, String type, String setup, String delivery, Flags flags, boolean safe, int id, String lang, String joke, String error) {
+    public JokeClass(String category, String type, String setup, String delivery, Flags flags, boolean safe, int id, String lang, String joke, String error) {
         this.category = category;
         this.type = type;
         this.setup = setup;

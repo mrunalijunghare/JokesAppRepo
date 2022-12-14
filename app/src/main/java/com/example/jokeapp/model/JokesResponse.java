@@ -10,7 +10,7 @@ public class JokesResponse {
     @SerializedName("amount")
     public int amount;
     @SerializedName("jokes")
-    public ArrayList<Joke> jokes;
+    public ArrayList<JokeClass> arrayListJokes;
 
 
     @Override
@@ -18,7 +18,7 @@ public class JokesResponse {
         return "JokesResponse{" +
                 "error=" + error +
                 ", amount=" + amount +
-                ", jokes=" + jokes +
+                ", jokes=" + arrayListJokes +
                 '}';
     }
 }

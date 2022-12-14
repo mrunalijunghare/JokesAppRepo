@@ -1,9 +1,7 @@
 package com.example.jokeapp.network;
 
-import com.example.jokeapp.model.Joke;
+import com.example.jokeapp.model.JokeClass;
 import com.example.jokeapp.model.JokesResponse;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -15,13 +13,13 @@ public interface JokesApi {
     Call<JokesResponse> getJokes(
             @Path("category") String category,
             @Query("type") String jokeType,
-            @Query("amount") Integer amount
+            @Query("amount") String amount
     );
 
     @GET("joke/{category}")
-    Call<Joke> getSingleJoke(
+    Call<JokeClass> getSingleJoke(
             @Path("category") String category,
             @Query("type") String jokeType,
-            @Query("amount") Integer amount
+            @Query("amount") String amount
     );
 }
