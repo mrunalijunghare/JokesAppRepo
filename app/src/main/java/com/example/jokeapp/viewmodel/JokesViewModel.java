@@ -11,11 +11,7 @@ import com.example.jokeapp.model.Event;
 import com.example.jokeapp.model.JokeClass;
 import com.example.jokeapp.model.JokesRequest;
 import com.example.jokeapp.model.JokesResponse;
-import com.example.jokeapp.network.repository.JokesRepository;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import com.example.jokeapp.repository.JokesRepository;
 
 public class JokesViewModel extends AndroidViewModel {
     private JokesRepository jokesRepository;

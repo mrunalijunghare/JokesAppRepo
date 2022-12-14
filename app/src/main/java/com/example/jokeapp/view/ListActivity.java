@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.jokeapp.R;
@@ -29,6 +31,7 @@ public class ListActivity extends AppCompatActivity {
     private LinearLayoutManager layoutManager;
     private JokesAdapter jokesAdapter;
     private ArrayList<JokeClass> jokesArraylist = new ArrayList<>();
+    private LinearLayout layoutError;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,7 @@ public class ListActivity extends AppCompatActivity {
         jokesViewModel = ViewModelProviders.of(this).get(JokesViewModel.class);
         setDataFromIntent();
 
+        layoutError = findViewById(R.id.layoutError);
         layoutManager = new LinearLayoutManager(this);
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
@@ -69,6 +73,9 @@ public class ListActivity extends AppCompatActivity {
                 jokesArraylist.addAll(jokesResponse.arrayListJokes);
                 jokesAdapter.notifyDataSetChanged();
                 Toast.makeText(this, "Jokes = "+jokesResponse.amount, Toast.LENGTH_SHORT).show();
+            } else {
+                recyclerView.setVisibility(View.GONE);
+                layoutError.setVisibility(View.VISIBLE);
             }
         });
 
@@ -77,6 +84,9 @@ public class ListActivity extends AppCompatActivity {
                 jokesArraylist.add(joke);
                 jokesAdapter.notifyDataSetChanged();
                 Toast.makeText(this, "Jokes = "+joke, Toast.LENGTH_SHORT).show();
+            } else {
+                recyclerView.setVisibility(View.GONE);
+                layoutError.setVisibility(View.VISIBLE);
             }
         });
     }
