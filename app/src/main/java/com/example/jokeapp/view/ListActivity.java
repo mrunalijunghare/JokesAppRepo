@@ -2,26 +2,20 @@ package com.example.jokeapp.view;
 
 import static com.example.jokeapp.model.Event.SEARCH;
 import static com.example.jokeapp.model.Util.KEY_JOKE_REQUEST;
-
+import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.Toast;
-
 import com.example.jokeapp.R;
 import com.example.jokeapp.adapter.JokesAdapter;
-import com.example.jokeapp.model.Event;
 import com.example.jokeapp.model.JokeClass;
 import com.example.jokeapp.model.JokesRequest;
-import com.example.jokeapp.model.Util;
 import com.example.jokeapp.viewmodel.JokesViewModel;
-
 import java.util.ArrayList;
 
 public class ListActivity extends AppCompatActivity {

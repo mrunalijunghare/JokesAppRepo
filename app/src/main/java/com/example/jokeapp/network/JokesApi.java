@@ -16,6 +16,7 @@ public interface JokesApi {
             @Query("amount") String amount
     );
 
+    /* Response data schema is different in this case hence added separate API call */
     @GET("joke/{category}")
     Call<JokeClass> getSingleJoke(
             @Path("category") String category,

@@ -1,7 +1,6 @@
 package com.example.jokeapp.model;
 
 import java.io.Serializable;
-import java.util.List;
 
 public class JokesRequest implements Serializable {
     private String category;

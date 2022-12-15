@@ -1,7 +1,5 @@
 package com.example.jokeapp.model;
 
-import java.util.List;
-
 public class Util {
     public final static String ANY = "Any";
     public final static String[] categoryStrArray = new String[]{"Programming", "Misc", "Dark", "Pun", "Spooky", "Christmas"};

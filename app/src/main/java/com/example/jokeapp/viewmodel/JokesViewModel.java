@@ -1,12 +1,10 @@
 package com.example.jokeapp.viewmodel;
 
 import android.app.Application;
-
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-
 import com.example.jokeapp.model.Event;
 import com.example.jokeapp.model.JokeClass;
 import com.example.jokeapp.model.JokesRequest;
@@ -42,7 +40,7 @@ public class JokesViewModel extends AndroidViewModel {
             case SEARCH:
                 requestSearchJokesList();
                 break;
-            case SUBMIT:
+            case SUBMIT: /* API is not available */
                 break;
         }
     }

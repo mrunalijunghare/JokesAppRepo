@@ -2,9 +2,6 @@ package com.example.jokeapp.view;
 
 import static com.example.jokeapp.model.Util.KEY_JOKE_REQUEST;
 import static com.example.jokeapp.model.Util.categoryStrArray;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,16 +10,12 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
-import android.widget.Toast;
-
+import androidx.appcompat.app.AppCompatActivity;
 import com.example.jokeapp.R;
 import com.example.jokeapp.model.JokesRequest;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class MainActivity extends AppCompatActivity {
     private final String TAG = MainActivity.class.getSimpleName();
