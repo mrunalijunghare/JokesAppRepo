@@ -30,8 +30,7 @@
 
         <activity
             android:name=".view.ListActivity"
-            android:label="@string/title_activity_list"
-            android:theme="@style/Theme.JokeApp.NoActionBar" >
+            android:label="@string/title_jokes_list">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
