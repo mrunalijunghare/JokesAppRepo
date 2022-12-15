@@ -1,5 +1,7 @@
 package com.example.jokeapp.model;
 
+import androidx.annotation.NonNull;
+
 import java.io.Serializable;
 
 public class JokesRequest implements Serializable {
@@ -9,12 +11,6 @@ public class JokesRequest implements Serializable {
 
     public JokesRequest() {
         category = Util.ANY;
-    }
-
-    public JokesRequest(String category, String jokeType, String amount) {
-        this.category = category;
-        this.jokeType = jokeType;
-        this.amount = amount;
     }
 
     public String getCategory() {
@@ -41,6 +37,7 @@ public class JokesRequest implements Serializable {
         this.amount = amount;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return "JokesRequest{" +

@@ -13,7 +13,7 @@ import retrofit2.Response;
 
 public class JokesRepository {
     private static final String TAG = JokesRepository.class.getSimpleName();
-    private JokesApi jokesApi;
+    private final JokesApi jokesApi;
     public JokesRepository() {
         jokesApi = RetrofitClient.getRetrofitInstance().create(JokesApi.class);
     }

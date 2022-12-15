@@ -22,7 +22,6 @@ public class ListActivity extends AppCompatActivity {
 
     JokesViewModel jokesViewModel;
     private RecyclerView recyclerView;
-    private LinearLayoutManager layoutManager;
     private JokesAdapter jokesAdapter;
     private ArrayList<JokeClass> jokesArraylist = new ArrayList<>();
     private LinearLayout layoutError;
@@ -41,11 +40,11 @@ public class ListActivity extends AppCompatActivity {
         setDataFromIntent();
 
         layoutError = findViewById(R.id.layoutError);
-        layoutManager = new LinearLayoutManager(this);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         recyclerView.setLayoutManager(layoutManager);
-        jokesAdapter = new JokesAdapter(this,jokesArraylist);
+        jokesAdapter = new JokesAdapter(jokesArraylist);
         recyclerView.setAdapter(jokesAdapter);
         makeRequestForJokesList();
     }
@@ -72,7 +71,7 @@ public class ListActivity extends AppCompatActivity {
             }
         });
 
-        jokesViewModel.getJokeResponseLiveData().observe(this, joke -> {
+        jokesViewModel.getSingleJokeResponseLiveData().observe(this, joke -> {
             if (joke != null) {
                 jokesArraylist.add(joke);
                 jokesAdapter.notifyDataSetChanged();

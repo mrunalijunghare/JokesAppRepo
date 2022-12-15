@@ -2,15 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:padding="@dimen/margin_10"
     android:background="@drawable/rectangle_shape">
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_margin="10dp"
-        android:orientation="vertical">
 
         <TextView
             android:id="@+id/tvJoke"
@@ -27,7 +20,7 @@
             android:textSize="@dimen/text_size_16sp"
             android:layout_marginTop="@dimen/margin_1"
              android:visibility="gone"
+            android:layout_below="@id/tvJoke"
              android:textStyle="normal" />
-    </LinearLayout>
 
 </RelativeLayout>

@@ -1,5 +1,7 @@
 package com.example.jokeapp.model;
 
+import androidx.annotation.NonNull;
+
 import com.google.gson.annotations.SerializedName;
 
 public class JokeClass {
@@ -24,99 +26,7 @@ public class JokeClass {
     @SerializedName("joke")
     public String joke;
 
-    public JokeClass(String category, String type, String setup, String delivery, Flags flags, boolean safe, int id, String lang, String joke, String error) {
-        this.category = category;
-        this.type = type;
-        this.setup = setup;
-        this.delivery = delivery;
-        this.flags = flags;
-        this.safe = safe;
-        this.id = id;
-        this.lang = lang;
-        this.joke = joke;
-        this.error = error;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getSetup() {
-        return setup;
-    }
-
-    public void setSetup(String setup) {
-        this.setup = setup;
-    }
-
-    public String getDelivery() {
-        return delivery;
-    }
-
-    public void setDelivery(String delivery) {
-        this.delivery = delivery;
-    }
-
-    public Flags getFlags() {
-        return flags;
-    }
-
-    public void setFlags(Flags flags) {
-        this.flags = flags;
-    }
-
-    public boolean isSafe() {
-        return safe;
-    }
-
-    public void setSafe(boolean safe) {
-        this.safe = safe;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getLang() {
-        return lang;
-    }
-
-    public void setLang(String lang) {
-        this.lang = lang;
-    }
-
-    public String getJoke() {
-        return joke;
-    }
-
-    public void setJoke(String joke) {
-        this.joke = joke;
-    }
-
-    public String getError() {
-        return error;
-    }
-
-    public void setError(String error) {
-        this.error = error;
-    }
-
+    @NonNull
     @Override
     public String toString() {
         return "Joke{" +

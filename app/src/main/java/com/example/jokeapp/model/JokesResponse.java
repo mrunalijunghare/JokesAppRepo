@@ -1,5 +1,7 @@
 package com.example.jokeapp.model;
 
+import androidx.annotation.NonNull;
+
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
@@ -12,7 +14,7 @@ public class JokesResponse {
     @SerializedName("jokes")
     public ArrayList<JokeClass> arrayListJokes;
 
-
+    @NonNull
     @Override
     public String toString() {
         return "JokesResponse{" +

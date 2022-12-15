@@ -19,7 +19,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button searchButton;
     private RadioButton rbCustom;
     private RadioButton rbAny;
     private CheckBox checkboxSingle;
@@ -43,12 +42,12 @@ public class MainActivity extends AppCompatActivity {
         checkboxTwopart = findViewById(R.id.checkboxTwopart);
         spinnerAmount = findViewById(R.id.spinnerAmount);
         setCustomCategoryDialog();
-        setButtonClickListener();
+        setSearchButtonClickListener();
         setSpinnerAdapter();
     }
 
     private void setSpinnerAdapter() {
-        List<Integer> arrayAmounts = new ArrayList<Integer>();
+        List<Integer> arrayAmounts = new ArrayList<>();
         for (int i=1; i<=10; i++) {
             arrayAmounts.add(i);
         }
@@ -68,11 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
             builder.setTitle("Choose Category");
 
-            builder.setMultiChoiceItems(categoryStrArray, checkedItems, (dialog, which, isChecked) -> {
-
-                checkedItems[which] = isChecked;
-
-            });
+            builder.setMultiChoiceItems(categoryStrArray, checkedItems, (dialog, which, isChecked) -> checkedItems[which] = isChecked);
 
             builder.setCancelable(false);
 
@@ -120,8 +115,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void setButtonClickListener() {
-        searchButton = findViewById(R.id.searchButton);
+    private void setSearchButtonClickListener() {
+        Button searchButton = findViewById(R.id.searchButton);
         searchButton.setOnClickListener(v ->  {
             Intent intent = new Intent(MainActivity.this, ListActivity.class);
             intent.putExtra(KEY_JOKE_REQUEST, getJokeRequestData());

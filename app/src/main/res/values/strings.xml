@@ -12,5 +12,6 @@
     <string name="twopart">twopart</string>
     <string name="hint_amount">Enter no between 1-10</string>
     <string name="error_no_jokes_found">No jokes found</string>
+    <string name="search">Search</string>
 
 </resources>

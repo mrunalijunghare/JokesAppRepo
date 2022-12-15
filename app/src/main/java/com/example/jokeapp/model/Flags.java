@@ -1,5 +1,7 @@
 package com.example.jokeapp.model;
 
+import androidx.annotation.NonNull;
+
 public class Flags {
     public boolean nsfw;
     public boolean religious;
@@ -8,6 +10,7 @@ public class Flags {
     public boolean sexist;
     public boolean explicit;
 
+    @NonNull
     @Override
     public String toString() {
         return "Flags{" +

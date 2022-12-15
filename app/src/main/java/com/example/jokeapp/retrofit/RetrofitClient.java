@@ -4,7 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
-    public static String JOKES_BASE_URL = "https://v2.jokeapi.dev/";
+    public static final String JOKES_BASE_URL = "https://v2.jokeapi.dev/";
     private static Retrofit retrofit;
 
     public static Retrofit getRetrofitInstance() {

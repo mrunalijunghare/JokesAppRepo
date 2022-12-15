@@ -12,15 +12,14 @@ import com.example.jokeapp.model.JokesResponse;
 import com.example.jokeapp.repository.JokesRepository;
 
 public class JokesViewModel extends AndroidViewModel {
-    private JokesRepository jokesRepository;
-    private LiveData<JokesResponse> jokesResponseLiveData = new MutableLiveData<>();;
+    private final JokesRepository jokesRepository;
+    private LiveData<JokesResponse> jokesResponseLiveData = new MutableLiveData<>();
     private LiveData<JokeClass> jokeResponseLiveData = new MutableLiveData<>();
     private JokesRequest jokesRequest = new JokesRequest();
 
     public JokesViewModel(@NonNull Application application) {
         super(application);
         jokesRepository = new JokesRepository();
-
     }
 
     public void setJokesRequest(JokesRequest jokesRequest) {
@@ -31,7 +30,7 @@ public class JokesViewModel extends AndroidViewModel {
         return jokesResponseLiveData;
     }
 
-    public LiveData<JokeClass> getJokeResponseLiveData() {
+    public LiveData<JokeClass> getSingleJokeResponseLiveData() {
         return jokeResponseLiveData;
     }
 

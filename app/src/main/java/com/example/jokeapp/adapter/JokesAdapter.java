@@ -1,6 +1,5 @@
 package com.example.jokeapp.adapter;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,11 +12,9 @@ import java.util.ArrayList;
 
 public class JokesAdapter extends RecyclerView.Adapter<JokesAdapter.ViewHolder> {
 
-    private Context context;
-    ArrayList<JokeClass> jokesArrayList;
+    final ArrayList<JokeClass> jokesArrayList;
 
-    public JokesAdapter(Context context, ArrayList<JokeClass> jokesArrayList) {
-        this.context = context;
+    public JokesAdapter(ArrayList<JokeClass> jokesArrayList) {
         this.jokesArrayList = jokesArrayList;
     }
 
@@ -46,7 +43,7 @@ public class JokesAdapter extends RecyclerView.Adapter<JokesAdapter.ViewHolder> 
         return jokesArrayList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView tvJoke;
         private final TextView tvDelivery;
         public ViewHolder(@NonNull View itemView) {
