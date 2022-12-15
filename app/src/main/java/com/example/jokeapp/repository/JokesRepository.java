@@ -1,4 +1,4 @@
-package com.example.jokeapp.network.repository;
+package com.example.jokeapp.repository;
 
 import android.util.Log;
 

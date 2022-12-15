@@ -1,15 +1,14 @@
 package com.example.jokeapp.model;
 
 import java.io.Serializable;
-import java.util.List;
 
 public class JokesRequest implements Serializable {
-    private String category = Util.ANY;
+    private String category;
     private String jokeType;
     private String amount;
 
     public JokesRequest() {
-
+        category = Util.ANY;
     }
 
     public JokesRequest(String category, String jokeType, String amount) {

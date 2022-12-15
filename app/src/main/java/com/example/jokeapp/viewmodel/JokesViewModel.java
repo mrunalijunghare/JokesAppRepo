@@ -1,21 +1,15 @@
 package com.example.jokeapp.viewmodel;
 
 import android.app.Application;
-
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-
 import com.example.jokeapp.model.Event;
 import com.example.jokeapp.model.JokeClass;
 import com.example.jokeapp.model.JokesRequest;
 import com.example.jokeapp.model.JokesResponse;
-import com.example.jokeapp.network.repository.JokesRepository;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import com.example.jokeapp.repository.JokesRepository;
 
 public class JokesViewModel extends AndroidViewModel {
     private JokesRepository jokesRepository;
@@ -46,7 +40,7 @@ public class JokesViewModel extends AndroidViewModel {
             case SEARCH:
                 requestSearchJokesList();
                 break;
-            case SUBMIT:
+            case SUBMIT: /* API is not available */
                 break;
         }
     }
