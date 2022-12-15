@@ -5,7 +5,6 @@ import static com.example.jokeapp.model.Util.KEY_JOKE_REQUEST;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -18,7 +17,7 @@ import com.example.jokeapp.model.JokesRequest;
 import com.example.jokeapp.viewmodel.JokesViewModel;
 import java.util.ArrayList;
 
-public class ListActivity extends AppCompatActivity {
+public class JokesListActivity extends AppCompatActivity {
 
     JokesViewModel jokesViewModel;
     private RecyclerView recyclerView;
@@ -64,7 +63,6 @@ public class ListActivity extends AppCompatActivity {
             if (jokesResponse != null && jokesResponse.arrayListJokes != null) {
                 jokesArraylist.addAll(jokesResponse.arrayListJokes);
                 jokesAdapter.notifyDataSetChanged();
-                Toast.makeText(this, "Jokes = "+jokesResponse.amount, Toast.LENGTH_SHORT).show();
             } else {
                 recyclerView.setVisibility(View.GONE);
                 layoutError.setVisibility(View.VISIBLE);
@@ -75,7 +73,6 @@ public class ListActivity extends AppCompatActivity {
             if (joke != null) {
                 jokesArraylist.add(joke);
                 jokesAdapter.notifyDataSetChanged();
-                Toast.makeText(this, "Jokes = "+joke, Toast.LENGTH_SHORT).show();
             } else {
                 recyclerView.setVisibility(View.GONE);
                 layoutError.setVisibility(View.VISIBLE);

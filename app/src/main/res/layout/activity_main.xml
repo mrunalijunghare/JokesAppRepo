@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/margin_10"
-    tools:context=".view.MainActivity">
+    tools:context=".view.SearchJokesActivity">
 
     <RelativeLayout
         android:id="@+id/layoutOuter"

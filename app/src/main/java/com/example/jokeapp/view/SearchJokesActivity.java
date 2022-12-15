@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class SearchJokesActivity extends AppCompatActivity {
 
     private RadioButton rbCustom;
     private RadioButton rbAny;
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         selectedCatergories = new ArrayList<>(categoryStrArray.length);
 
         rbCustom.setOnClickListener(v -> {
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(SearchJokesActivity.this);
 
             builder.setTitle("Choose Category");
 
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
     private void setSearchButtonClickListener() {
         Button searchButton = findViewById(R.id.searchButton);
         searchButton.setOnClickListener(v ->  {
-            Intent intent = new Intent(MainActivity.this, ListActivity.class);
+            Intent intent = new Intent(SearchJokesActivity.this, JokesListActivity.class);
             intent.putExtra(KEY_JOKE_REQUEST, getJokeRequestData());
             startActivity(intent);
         });

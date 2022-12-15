@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/margin_10"
-    tools:context=".view.ListActivity">
+    tools:context=".view.JokesListActivity">
     <LinearLayout
         android:id="@+id/layoutError"
         android:padding="@dimen/margin_10"
