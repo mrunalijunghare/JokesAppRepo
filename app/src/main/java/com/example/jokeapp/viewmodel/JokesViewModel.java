@@ -40,7 +40,7 @@ public class JokesViewModel extends AndroidViewModel {
             case SEARCH:
                 requestSearchJokesList();
                 break;
-            case SUBMIT: /* API is not available */
+            case SUBMIT:
                 break;
         }
     }

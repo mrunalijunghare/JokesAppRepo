@@ -18,7 +18,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private final String TAG = MainActivity.class.getSimpleName();
 
     private Button searchButton;
     private RadioButton rbCustom;
@@ -54,15 +53,10 @@ public class MainActivity extends AppCompatActivity {
             arrayAmounts.add(i);
         }
 
-        // Creating adapter for spinner
-        ArrayAdapter<Integer> dataAdapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item, arrayAmounts);
+        ArrayAdapter<Integer> amountSpinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, arrayAmounts);
+        amountSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        // Drop down layout style - list view with radio button
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        // attaching data adapter to spinner
-        spinnerAmount.setAdapter(dataAdapter);
-
+        spinnerAmount.setAdapter(amountSpinnerAdapter);
     }
 
     private void setCustomCategoryDialog() {
@@ -70,23 +64,18 @@ public class MainActivity extends AppCompatActivity {
         selectedCatergories = new ArrayList<>(categoryStrArray.length);
 
         rbCustom.setOnClickListener(v -> {
-            // initialise the alert dialog builder
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 
-            // set the title for the alert dialog
             builder.setTitle("Choose Category");
 
-            // now this is the function which sets the alert dialog for multiple item selection ready
             builder.setMultiChoiceItems(categoryStrArray, checkedItems, (dialog, which, isChecked) -> {
 
                 checkedItems[which] = isChecked;
 
             });
 
-            // alert dialog shouldn't be cancellable
             builder.setCancelable(false);
 
-            // handle the positive button of the dialog
             builder.setPositiveButton("Done", (dialog, which) -> {
                 selectedCatergories.clear();
                 int i = 0;
@@ -101,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-            // handle the negative button of the alert dialog
             builder.setNegativeButton("CANCEL", (dialog, which) -> {
                 if (selectedCatergories.isEmpty()) {
                     rbAny.setChecked(true);
@@ -118,19 +106,16 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-            // handle the neutral button of the dialog to clear the selected items boolean checkedItem
             builder.setNeutralButton("CLEAR ALL", (dialog, which) -> {
                 Arrays.fill(checkedItems, false);
                 selectedCatergories.clear();
                 rbAny.setChecked(true);
              });
 
-            // create the builder
             builder.create();
 
-            // create the alert dialog with the alert dialog builder instance
-            AlertDialog alertDialog = builder.create();
-            alertDialog.show();
+            AlertDialog customCategoryDialog = builder.create();
+            customCategoryDialog.show();
 
         });
     }

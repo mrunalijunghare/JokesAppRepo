@@ -1,15 +1,12 @@
 package com.example.jokeapp.repository;
 
 import android.util.Log;
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-
 import com.example.jokeapp.model.JokeClass;
 import com.example.jokeapp.model.JokesResponse;
 import com.example.jokeapp.network.JokesApi;
 import com.example.jokeapp.retrofit.RetrofitClient;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

@@ -2,7 +2,6 @@ package com.example.jokeapp.network;
 
 import com.example.jokeapp.model.JokeClass;
 import com.example.jokeapp.model.JokesResponse;
-
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -16,7 +15,6 @@ public interface JokesApi {
             @Query("amount") String amount
     );
 
-    /* Response data schema is different in this case hence added separate API call */
     @GET("joke/{category}")
     Call<JokeClass> getSingleJoke(
             @Path("category") String category,

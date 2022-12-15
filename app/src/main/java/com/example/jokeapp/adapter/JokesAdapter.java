@@ -5,13 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.jokeapp.R;
 import com.example.jokeapp.model.JokeClass;
-
 import java.util.ArrayList;
 
 public class JokesAdapter extends RecyclerView.Adapter<JokesAdapter.ViewHolder> {
@@ -55,8 +52,8 @@ public class JokesAdapter extends RecyclerView.Adapter<JokesAdapter.ViewHolder> 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tvJoke=(TextView) itemView.findViewById(R.id.tvJoke);
-            tvDelivery = (TextView) itemView.findViewById(R.id.tvDelivery);
+            tvJoke = itemView.findViewById(R.id.tvJoke);
+            tvDelivery = itemView.findViewById(R.id.tvDelivery);
         }
     }
 }
